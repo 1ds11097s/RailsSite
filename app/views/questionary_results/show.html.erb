@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%=@questionary.title %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>result</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questionary_results.each.do |result| %>
+      <tr>
+        <td><%= result %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+  <br>
+  <a href="/questionary_results/calc/<%=@questionary.id %>">calc data</a>
+
+

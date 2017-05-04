@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+<h1 class="title"><%= @questionary.title %></h1>
+<div class="questionary">
+<p class="description">
+  <%= @questionary.description %>
+</p>
+
+<p class="deadline">
+  <strong>締め切り</strong>
+  <%= @questionary.deadline %>
+</p>
+</div>
+
+<div class="items">
+
+<%= form_tag(action:'show', id:@questionary.id) %>
+
+<% count_items = 0 %>
+
+<% @questionary.questionary_item.each do |item| %>
+  <p class="q"><%= item.content %></p>
+  <% count_items += 1 %>
+  <% count_choices = 0 %>
+
+  <% item.questionary_choice.each do |choice| %>
+    <% count_choices += 1 %>
+
+    <div class="choice">
+      <input type="radio" id="<%= count_items.to_s + '_' + count_choices.to_s %>"
+      name="r<%= count_items.to_s %>"
+      value="<%=choice.value %>">
+    <label for="<%= count_items.to_s + '_' + count_choices.to_s %>">
+      <%= choice.content %></label></div>
+    <% end %>
+    <hr>
+    <% end %>
+
+    <%= submit_tag '送信' %>
+
+    </form>
+    </div>
+    <%= link_to 'back', questionaries_path %>

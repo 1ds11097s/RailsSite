@@ -1,0 +1,27 @@
+<h1>People#index</h1>
+<p>Find me in app/views/people/index.html.erb</p>
+<pre>
+<table>
+    <tr>
+        <th>id</th><th>title</th><th>person</th><th colspan="2"></th>
+    </tr>
+    <% @data.each do |obj| %>
+    <tr>
+        <td><%= obj.id %></td>
+        <td><a href="/messages/<%= obj.id %>"><%= obj.title %></a></td>
+        <td><%= obj.person.name %></td>
+        <td><a href="/messages/edit/<%= obj.id %>edit</a></td>
+        <td><a href="javascript:delData(<%= obj.id %>);">delete</a></td>
+    </tr>
+    <% end %>
+<table>
+
+<script>
+function delData(num){
+    if(confirm('このデータを削除しますか')){
+        document.location = "/messages/delete/" + num;
+    }
+    return false;
+}
+</script>
+</pre>

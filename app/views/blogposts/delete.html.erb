@@ -1,0 +1,17 @@
+<h1>Blogposts#delete</h1>
+<p>以下を削除してもいいですか</p>
+<table>
+    <tr><th>id</th>
+        <td><%= @blogpost.id %></td></tr>
+    <tr><th>title</th>
+        <td><%= @blogpost.title %></td></tr>
+    <tr><th>read</th>
+        <td><%= @blogpost.read %></td></tr>
+    <tr><th>content</th>
+        <td><%= @blogpost.content %></td></tr>
+</table>
+<%= form_tag controller: "blogposts", action: "delete" do %>
+    <%= hidden_field_tag "id", {value: @blogpost.id} %>
+    <%= submit_tag "送信" %>
+<% end %>
+    

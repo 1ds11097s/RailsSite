@@ -1,0 +1,17 @@
+<h2><%= @genre.name %></h2>
+<p>Find me in app/views/blogs/index.html.erb</p>
+
+<% @data.each do |obj| %>
+    <h3 class="top_title"><a href="/blogs/show/<%= obj.id %>">
+    <%= obj.title %></a></h3>
+<p class=#top_read"><%= obj.read %><span class="top_created">
+(<%= obj.created_at %>)</span></p>
+<hr>
+<% end %>
+<div class="navigate">
+    <% if @page_num > 0 then %>
+    <a href="/blogs/genre/<%= @genre.id.to_s + '/' + (@page_num - 1).to_s %>"><<前のページ</a>
+<% end %>
+<span></span>
+<a href="/blogs/genre/<%= @genre.id.to_s + '/' + (@page_num + 1).to_s %>">次のページ>></a>
+</div>

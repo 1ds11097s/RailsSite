@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Questionary Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Result</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questionaries.each do |questionary| %>
+      <tr>
+        <td><%= questionary.id %></td>
+        <td><%= questionary.title %></td>
+        <td><a href="/questionary_results/<%=questionary.id %>">show</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Questionary Result', new_questionary_result_path %>

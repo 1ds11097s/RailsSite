@@ -1,0 +1,40 @@
+<h1>message</h1>
+<p><%= @msg %></p>
+<% if @blogpost.errors.any? %>
+<ul>
+    <% @blogpost.errors.full_messages.each do |err| %>
+        <li><%= err %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<table>
+    <%= form_for(@blogpost, url:{controller:'blogposts', action:'add'}) do |form| %>
+    <tr><th>title</th>
+        <td><%= form.text_field :title %></td></tr>
+    <tr><th>read</th>
+        <td><%= form.text_field :read %></td></tr>
+    <tr><th>content</th>
+        <td><%= form.text_area :content, {cols:40, rows:10} %></td></tr>
+    <tr><th>genre id</th>
+        <td><%= form.text_field :bloggenre_id %></td></tr>
+    </tr>
+    <tr><th></th>
+        <td><%= form.submit "送信" %></td></tr>
+    </tr>
+    <% end %>
+</table>
+
+<hr>
+<p>ジャンルの一覧</p>
+<table>
+    <tr>
+        <th>id</th><th>genre</th>
+    </tr>
+    <% @genres.each do |obj| %>
+    <tr>
+        <td><%= obj.id %></td>
+        <td><%= obj.name %></td>
+    </tr>
+    <% end %>
+</table>

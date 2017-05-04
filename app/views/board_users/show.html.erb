@@ -1,0 +1,22 @@
+<h1>"<%=@board_user.nickname %>"</h1>
+<table>
+  <tr>
+      <th>nickname</th>
+      <td><%= @board_user.nickname %></td>
+  </tr>
+  <tr>
+      <th>id</th>
+      <td><%= @board_user.id %></td>
+  </tr>
+  <tr>
+      <th>created at</th>
+      <td><%= @board_user.created_at %></td>
+  </tr>
+  <tr>
+      <th>memo</th>
+      <td><%= @board_user.memo %></td>
+  </tr>
+</table>
+
+<hr>
+<%= link_to '<<Back', controller: :board_messages %>

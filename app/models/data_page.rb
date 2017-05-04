@@ -1,0 +1,2 @@
+class DataPage < ApplicationRecord
+end

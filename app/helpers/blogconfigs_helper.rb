@@ -1,0 +1,2 @@
+module BlogconfigsHelper
+end

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  value: 1
+  questionary_item_id: 1
+
+two:
+  content: MyText
+  value: 1
+  questionary_item_id: 1

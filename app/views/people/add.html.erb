@@ -1,0 +1,24 @@
+<h1>people</h1>
+<p><%= @msg %></p>
+<% if @person.errors.any? %>
+<ul>
+    <% @person.errors.full_messages.each do |err| %>
+        <li><%= err %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<table>
+    <%= form_for(@person, url:{controller:'people', action:'create'}) do |form| %>
+    <tr><th>name</th>
+        <td><%= form.text_field :name %></td></tr>
+    <tr><th>age</th>
+        <td><%= form.text_field :age %></td></tr>
+    <tr><th>mail</th>
+        <td><%= form.text_field :mail %></td></tr>
+    </tr>
+    <tr><th></th>
+        <td><%= form.submit "送信" %></td></tr>
+    </tr>
+    <% end %>
+</table>

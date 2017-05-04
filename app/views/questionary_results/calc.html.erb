@@ -1,0 +1,15 @@
+<h1><%=@questionary.title %>の集計</h1>
+
+<table>
+<tr><th>質問ID</th><th>集計</th></tr>
+<% @calc.each do |ky, vl| %>
+    <tr><td><%= ky %></td><td>
+    <table><tr>
+    <% for v in vl %>
+        <td><%= v.to_i %></td>
+    <% end %>
+    </tr>
+    </table>
+    </td></tr>
+    <% end %>
+    </table>

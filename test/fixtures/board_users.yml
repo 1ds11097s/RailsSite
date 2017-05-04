@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nickname: MyText
+  account_id: 1
+  memo: MyText
+
+two:
+  nickname: MyText
+  account_id: 1
+  memo: MyText

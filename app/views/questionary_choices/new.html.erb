@@ -1,0 +1,7 @@
+<h1>New Questionary Choice</h1>
+
+<%= render 'form', questionary_choice: @questionary_choice %>
+
+<hr>
+
+<%= link_to 'Back', '/questionary_items/new/' + @questionary_item.questionary_id.to_s %>

@@ -1,0 +1,12 @@
+<h1>Blogs#show</h1>
+<p>Find me in app/views/blogs/show.html.erb</p>
+
+<h3 class="show_title"><%= @blogpost.title %></h3>
+<p class="show_read"><%= @blogpost.read + '[' + @blogpost.bloggenre.name + ']' %></p>
+<% contents = @blogpost.content.split "\n" %>
+<div class="show_content">
+<% contents.each do |paragraph| %>
+<p><%= paragraph %></p>
+<% end %>
+</div>
+<p class="show_created">(<%= @blogpost.created_at %>)</p>

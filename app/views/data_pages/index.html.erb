@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Data Pages</h1>
+
+<div><%= page_entries_info @data_pages %></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Data</th>
+      <th>created</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @data_pages.each do |data_page| %>
+      <tr>
+        <td><%= data_page.id %></td>
+        <td><%= data_page.data %></td>
+        <td><%= data_page.created_at %></td>
+        <td><%= link_to 'Show', data_page %></td>
+        <td><%= link_to 'Edit', edit_data_page_path(data_page) %></td>
+        <td><%= link_to 'Destroy', data_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div><%= paginate @data_pages %></div>
+<br>
+<%= link_to 'New Data Page', new_data_page_path %>

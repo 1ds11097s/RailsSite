@@ -1,0 +1,23 @@
+<h1>people</h1>
+<p><%= @msg %></p>
+<pre>
+<table>
+    <tr><th>id</th>
+        <td><%= @data.id %></td></tr>
+    <tr><th>name</th>
+        <td><%= @data.name %></td></tr>
+    <tr><th>age</th>
+        <td><%= @data.age %></td></tr>
+    <tr><th>name</th>
+        <td><%= @data.mail %></td></tr>
+    <tr><th>message</th>
+        <td>
+        <% if @data.message != nil then %>
+            <% @data.message.each do |obj| %>
+            <%= ' 「' + obj.title + '」' %>
+        <% end %>
+    <% end %>
+    </td></tr>
+</tr>
+</table>
+</pre>

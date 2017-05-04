@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Questionary Choices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Value</th>
+      <th>Questionary item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questionary_choices.each do |questionary_choice| %>
+      <tr>
+        <td><%= questionary_choice.content %></td>
+        <td><%= questionary_choice.value %></td>
+        <td><%= questionary_choice.questionary_item_id %></td>
+        <td><%= link_to 'Show', questionary_choice %></td>
+        <td><%= link_to 'Edit', edit_questionary_choice_path(questionary_choice) %></td>
+        <td><%= link_to 'Destroy', questionary_choice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Questionary Choice', new_questionary_choice_path %>

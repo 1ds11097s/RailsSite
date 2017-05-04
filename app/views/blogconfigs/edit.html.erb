@@ -1,0 +1,24 @@
+<h1>message</h1>
+<p><%= @msg %></p>
+<% if @blogconfig.errors.any? %>
+<ul>
+    <% @blogconfig.errors.full_messages.each do |err| %>
+        <li><%= err %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<table>
+    <%= form_for(@blogconfig, url:{controller:'blogconfigs', action:'edit'}) do |form| %>
+    <tr><th>title</th>
+        <td><%= form.text_field :title %></td></tr>
+    <tr><th>subtitle</th>
+        <td><%= form.text_field :subtitle %></td></tr>
+    <tr><th>style name</th>
+        <td><%= form.text_field :stylename %></td></tr>
+    </tr>
+    <tr><th></th>
+        <td><%= form.submit "送信" %></td></tr>
+    </tr>
+    <% end %>
+</table>

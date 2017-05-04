@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @questionary_choice.content %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @questionary_choice.value %>
+</p>
+
+<p>
+  <strong>Questionary item:</strong>
+  <%= @questionary_choice.questionary_item_id %>
+</p>
+
+<%= link_to 'Edit', edit_questionary_choice_path(@questionary_choice) %> |
+<%= link_to 'Back', questionary_choices_path %>
